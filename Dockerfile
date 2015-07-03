@@ -2,7 +2,7 @@ FROM node:latest
 MAINTAINER maintain@geneegroup.com
 
 RUN apt-get update \
-    && apt-get install -y git supervisor \
+    && apt-get install -y supervisor \
     && rm -rf /var/lib/apt/lists/*
 
 RUN sed -i 's/^\(\[supervisord\]\)$/\1\nnodaemon=true/' /etc/supervisor/supervisord.conf
